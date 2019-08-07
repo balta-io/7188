@@ -1,0 +1,5 @@
+<ion-badge color="primary" *ngIf="status == 'confirmed'">&nbsp;</ion-badge>
+<ion-badge color="warning" *ngIf="status == 'waiting_payment'">&nbsp;</ion-badge>
+<ion-badge color="danger" *ngIf="status == 'canceled'">&nbsp;</ion-badge>
+<ion-badge color="tertiary" *ngIf="status == 'in_transit'">&nbsp;</ion-badge>
+<ion-badge color="success" *ngIf="status == 'completed'">&nbsp;</ion-badge>
