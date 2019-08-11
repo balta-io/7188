@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-frame',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FramePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController,
+    private menuCtrl: MenuController,
+  ) { }
 
   ngOnInit() {
   }
 
+  goToPage(page: string) {
+    this.menuCtrl.close();
+    this.navCtrl.navigateRoot(page);
+  }
 }

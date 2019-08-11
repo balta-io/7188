@@ -1,5 +1,6 @@
 <ion-menu>
   <ion-content padding>
+    <app-user-card></app-user-card>
     <ion-list lines="none">
       <ion-item-divider>
         <ion-label>&nbsp;</ion-label>
@@ -7,17 +8,8 @@
       <ion-item class="clickable" (click)="goToPage('')" detail>
         <ion-icon slot="start" color="light" name="home"></ion-icon> Home
       </ion-item>
-      <ion-item class="clickable" (click)="goToPage('courses')" detail>
-        <ion-icon slot="start" color="light" name="play-circle"></ion-icon> Cursos
-      </ion-item>
-      <ion-item class="clickable" (click)="goToPage('courses')" detail *ngIf="user">
-        <ion-icon slot="start" color="light" name="heart"></ion-icon> Meus Cursos
-      </ion-item>
-      <ion-item class="clickable" (click)="goToPage('courses')" detail *ngIf="user">
-        <ion-icon slot="start" color="light" name="briefcase"></ion-icon> Minhas Carreiras
-      </ion-item>
-      <ion-item class="clickable" (click)="goToPage('certificates')" detail *ngIf="user">
-        <ion-icon slot="start" color="light" name="star"></ion-icon>Meus Certificados
+      <ion-item class="clickable" (click)="goToPage('orders')" detail>
+        <ion-icon slot="start" color="light" name="list"></ion-icon> Pedidos
       </ion-item>
     </ion-list>
   </ion-content>

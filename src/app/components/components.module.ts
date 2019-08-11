@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { OrderListComponent } from './order-list/order-list.component';
 import { MonthlySalesChartComponent } from './monthly-sales-chart/monthly-sales-chart.component';
 import { OrderStatusBadgeComponent } from './order-status-badge/order-status-badge.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { OrderStatusBadgeComponent } from './order-status-badge/order-status-bad
     OrderListComponent,
     OrderStatusBadgeComponent,
     MonthlySalesChartComponent,
+    UserCardComponent,
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { OrderStatusBadgeComponent } from './order-status-badge/order-status-bad
     OrderListComponent,
     OrderStatusBadgeComponent,
     MonthlySalesChartComponent,
+    UserCardComponent,
   ]
 })
 export class ComponentsModule { }
