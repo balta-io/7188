@@ -1,3 +1,9 @@
-<p>
-  user-card works!
+<div class="ion-padding custom-skeleton" *ngIf="!user">
+  <app-loading></app-loading>
+</div>
+
+<p class="text-center" *ngIf="user">
+  <img src="{{ user.image }}" alt="{{ user.name }}"><br>
+  <small>{{ user.name }}</small><br>
+  <ion-button color="primary" size="small" (click)="logout()">Sair</ion-button>
 </p>

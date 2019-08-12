@@ -22,4 +22,8 @@ export class DataService {
   public getOrders() {
     return this.http.get(`${this.baseUrl}/v1/orders`);
   }
+
+  public getOrder(order: string) {
+    return this.http.get(`${this.baseUrl}/v1/orders/${order}`);
+  }
 }

@@ -6,10 +6,12 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { MonthlySalesChartComponent } from './monthly-sales-chart/monthly-sales-chart.component';
 import { OrderStatusBadgeComponent } from './order-status-badge/order-status-badge.component';
 import { UserCardComponent } from './user-card/user-card.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
+    LoadingComponent,
     OrderListComponent,
     OrderStatusBadgeComponent,
     MonthlySalesChartComponent,
@@ -21,6 +23,7 @@ import { UserCardComponent } from './user-card/user-card.component';
   ],
   exports: [
     NavbarComponent,
+    LoadingComponent,
     OrderListComponent,
     OrderStatusBadgeComponent,
     MonthlySalesChartComponent,

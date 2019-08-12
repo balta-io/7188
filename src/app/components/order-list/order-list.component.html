@@ -1,15 +1,11 @@
 <div class="ion-padding custom-skeleton" *ngIf="!orders">
-  <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-  <ion-skeleton-text animated></ion-skeleton-text>
-  <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-  <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-  <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+  <app-loading></app-loading>
 </div>
 
 <div *ngIf="orders">
   <ion-searchbar color="light" placeholder="Filtrar..."></ion-searchbar>
   <ion-list>
-    <ion-item class="clickable" *ngFor="let order of orders">
+    <ion-item class="clickable" *ngFor="let order of orders" (click)="goToOrder(order.number)">
       <h1 slot="start">
         <app-order-status-badge [status]="order.status"></app-order-status-badge>
       </h1>

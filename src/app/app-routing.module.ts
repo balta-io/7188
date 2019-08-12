@@ -5,7 +5,7 @@ import { FramePage } from './pages/shared/frame/frame.page';
 
 const routes: Routes = [
   { path: 'login', loadChildren: './pages/account/login/login.module#LoginPageModule' },
-  { path: 'frame', loadChildren: './pages/shared/frame/frame.module#FramePageModule' },
+  // { path: '', loadChildren: './pages/shared/frame/frame.module#FramePageModule' },
   {
     path: '',
     component: FramePage,

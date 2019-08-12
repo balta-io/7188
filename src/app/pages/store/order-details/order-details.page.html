@@ -1,38 +1,42 @@
 <app-navbar></app-navbar>
 
-<ion-content padding>
+<ion-content padding *ngIf="!order">
+  <app-loading></app-loading>
+</ion-content>
+
+<ion-content padding *ngIf="order">
   <ion-list lines="none">
     <ion-item>
       <ion-label>
         <small>Pedido</small><br>
-        <strong>8CV56R74</strong>
+        <strong>{{ order.number }}</strong>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-label>
         <small>Data</small><br>
-        <strong>08/08/2019</strong>
+        <strong>{{ order.date | date: 'dd/MM/yyyy' }}</strong>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-label>
         <small>Total</small><br>
-        <strong>R$ 239,00</strong>
+        <strong>{{ order.total/100 | currency: 'BRL' }}</strong>
       </ion-label>
     </ion-item>
     <ion-item detail class="clickable">
       <ion-label>
         <small>Cliente</small><br>
-        <strong>Burce Wayne</strong>
+        <strong>{{ order.customer?.name }}</strong>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-label>
         <small>Situação</small><br>
-        <strong>Confirmada</strong>
+        <strong>{{ translateOrderStatus(order.status) }}</strong>
       </ion-label>
       <h1 slot="end">
-        <app-order-status-badge status="confirmed"></app-order-status-badge>
+        <app-order-status-badge [status]="order.status"></app-order-status-badge>
       </h1>
     </ion-item>
   </ion-list>
@@ -40,49 +44,41 @@
   <hr>
 
   <p class="text-right">
-    <ion-button color="success">Confirmar Pagamento</ion-button>
-    <ion-button color="primary">Editar</ion-button>
-    <ion-button color="danger">Cancelar</ion-button>
+    <ion-button color="success" [disabled]="order.status!='waiting_payment'">Confirmar Pagamento</ion-button>
+
+    <ion-button color="primary" [disabled]="!isManager()">Editar</ion-button>
+
+    <ion-button color="danger" [disabled]="!isManager()">Cancelar Pedido</ion-button>
   </p>
 
   <ion-list>
     <ion-list-header>
       <ion-label>Itens do Pedido</ion-label>
     </ion-list-header>
-    <ion-item>
+    <ion-item *ngFor="let item of order.items">
       <ion-label>
-        <strong>XP9842</strong><br>
-        Ralador de Cenoura Elétrico
+        <strong>{{ item.code }}</strong><br>
+        {{ item.title }}
       </ion-label>
-      <h4 slot="end">R$ 29,90</h4>
-    </ion-item>
-    <ion-list-header>
-      <ion-label>Subtotal</ion-label>
-    </ion-list-header>
-    <ion-item>
-      <h3 slot="end">R$ 29,90</h3>
+      <h4 slot="end">{{ item.price/100 | currency: 'BRL'}}</h4>
     </ion-item>
     <ion-list-header>
       <ion-label>Frete</ion-label>
     </ion-list-header>
     <ion-item>
-      <h3 slot="end">R$ 9,90</h3>
+      <h3 slot="end">{{ order.deliveryFee/100 | currency: 'BRL'}}</h3>
     </ion-item>
     <ion-list-header>
       <ion-label>Desconto</ion-label>
     </ion-list-header>
     <ion-item>
-      <ion-label>
-        <small>Cupom</small><br>
-        <strong>DESC001</strong>
-      </ion-label>
-      <h3 slot="end">R$ 9,90</h3>
+      <h3 slot="end">{{ order.discount/100 | currency: 'BRL'}}</h3>
     </ion-item>
     <ion-list-header>
       <ion-label>Total</ion-label>
     </ion-list-header>
     <ion-item>
-      <h1 slot="end">R$ 239,90</h1>
+      <h1 slot="end">{{ order.total/100 | currency: 'BRL'}}</h1>
     </ion-item>
   </ion-list>
 </ion-content>
