@@ -1,18 +1,18 @@
 {
     "id": "mockoon_export",
     "appVersion": "1.4.0",
-    "checksum": "9660459d617c6bcbdf294cab3ebb602c",
+    "checksum": "667eb89c3958f17e09efc6df990b21ce",
     "subject": "full",
     "data": [
         {
-            "uuid": "401c14e0-b22f-11e9-b692-eb654e892fd0",
+            "uuid": "7ec95aa0-bb25-11e9-8cd5-dd5309841ffa",
             "name": "7188",
             "endpointPrefix": "",
             "latency": 0,
             "port": 7188,
             "routes": [
                 {
-                    "uuid": "2413b500-b7ac-11e9-b8bc-972c055ee4df",
+                    "uuid": "7ec95aa1-bb25-11e9-8cd5-dd5309841ffa",
                     "documentation": "",
                     "method": "post",
                     "endpoint": "v1/login",
@@ -29,7 +29,7 @@
                     "sendFileAsBody": false
                 },
                 {
-                    "uuid": "970fc210-b92d-11e9-bb95-dfb886f80baf",
+                    "uuid": "7ec95aa2-bb25-11e9-8cd5-dd5309841ffa",
                     "documentation": "",
                     "method": "get",
                     "endpoint": "v1/reports/ms",
@@ -46,12 +46,29 @@
                     "sendFileAsBody": false
                 },
                 {
-                    "uuid": "8f158bf0-b935-11e9-bb95-dfb886f80baf",
+                    "uuid": "7ec95aa3-bb25-11e9-8cd5-dd5309841ffa",
                     "documentation": "",
                     "method": "get",
                     "endpoint": "v1/orders",
-                    "body": "[\n    {\n        \"number\":\"8CV56R74\",\n        \"date\":\"2019-07-18T17:49:00.000+0000\",\n        \"status\":\"canceled\",\n        \"total\":23999,\n        \"customer\": {\n            \"name\":\"Bruce Wayne\"\n        }\n    },\n    {\n        \"number\":\"2795EF65\",\n        \"date\":\"2019-07-18T18:12:00.000+0000\",\n        \"status\":\"confirmed\",\n        \"total\":7884,\n        \"customer\": {\n            \"name\":\"Peter Parker\"\n        }\n    }\n]",
+                    "body": "[\n    {\n        \"number\":\"8CV56R74\",\n        \"date\":\"2019-07-18T17:49:00.000+0000\",\n        \"status\":\"waiting_payment\",\n        \"total\":23999,\n        \"customer\": {\n            \"name\":\"Bruce Wayne\"\n        }\n    },\n    {\n        \"number\":\"2795EF65\",\n        \"date\":\"2019-07-18T18:12:00.000+0000\",\n        \"status\":\"confirmed\",\n        \"total\":7884,\n        \"customer\": {\n            \"name\":\"Peter Parker\"\n        }\n    }\n]",
                     "latency": 1500,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "2ece3d70-bca3-11e9-bd17-a942bdf500a1",
+                    "documentation": "",
+                    "method": "get",
+                    "endpoint": "v1/orders/8CV56R74",
+                    "body": "{\n    \"number\": \"8CV56R74\",\n    \"date\": \"2019-07-18T17:49:00.000+0000\",\n    \"status\": \"waiting_payment\",\n    \"total\": 23999,\n    \"discount\": 990,\n    \"deliveryFee\": 990,\n    \"customer\": {\n        \"name\":\"Bruce Wayne\"\n    },\n    \"items\": [\n        {\n            \"code\": \"C5BFAAF9\",\n            \"title\": \"Ração Canil 30KG\",\n            \"price\": 20000\n        },\n        {\n            \"code\": \"AFA21D81\",\n            \"title\": \"Coleira Cachorro Petz\",\n            \"price\": 3990\n        }\n    ]\n}",
+                    "latency": 1300,
                     "statusCode": "200",
                     "headers": [
                         {
