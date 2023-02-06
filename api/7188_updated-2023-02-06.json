@@ -1,0 +1,170 @@
+{
+  "uuid": "f83d9a8e-95ae-4414-a755-bf00e0bb63dd",
+  "lastMigration": 25,
+  "name": "7188",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "5bc5df98-6f5c-44a3-ae86-8b641a737a48",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "v1/login",
+      "responses": [
+        {
+          "uuid": "2b83e85d-14c5-4149-8bce-f1e852b57747",
+          "body": "{\n  \"username\": \"batman\",\n  \"name\": \"Bruce Wayne\",\n  \"image\": \"https://baltademos.blob.core.windows.net/eshop/batman.png\",\n  \"email\": \"batman@balta.io\",\n  \"token\": \"aHR0cHM6Ly9iYWx0YWRlbW9zLmJsb2IuY29yZS53aW5kb3dzLm5ldC9lc2hvcC9iYXRtYW4ucG5n\",\n  \"roles\": [\n    \"employee\",\n    \"manager\"\n  ]\n}",
+          "latency": 1200,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "243bccbf-fe3d-4349-9fc9-12467787e071",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/reports/ms",
+      "responses": [
+        {
+          "uuid": "2cbb3517-8567-4372-92d1-4ee53eb77d84",
+          "body": "{\r\n    \"labels\": [\"Janeiro\", \"Fevereiro\", \"Março\", \"Abril\", \"Maio\", \"Junho\"],\r\n    \"datasets\": [{\r\n      \"label\": \"# de vendas\",\r\n      \"data\": [7,9,12,24,8,5],\r\n      \"backgroundColor\": [\r\n        \"rgba(255, 99, 132, 0.2)\",\r\n        \"rgba(54, 162, 235, 0.2)\",\r\n        \"rgba(255, 206, 86, 0.2)\",\r\n        \"rgba(75, 192, 192, 0.2)\",\r\n        \"rgba(153, 102, 255, 0.2)\",\r\n        \"rgba(255, 159, 64, 0.2)\"\r\n      ],\r\n      \"borderColor\": [\r\n        \"rgba(255, 99, 132, 1)\",\r\n        \"rgba(54, 162, 235, 1)\",\r\n        \"rgba(255, 206, 86, 1)\",\r\n        \"rgba(75, 192, 192, 1)\",\r\n        \"rgba(153, 102, 255, 1)\",\r\n        \"rgba(255, 159, 64, 1)\"\r\n      ],\r\n      \"borderWidth\": 1\r\n    }]\r\n}",
+          "latency": 1500,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "32e6bcef-762d-499b-bbe6-c9c10a3be635",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/orders",
+      "responses": [
+        {
+          "uuid": "561a7fe8-c09c-4d87-b7e2-5a26dce54dec",
+          "body": "[\n    {\n        \"number\":\"8CV56R74\",\n        \"date\":\"2019-07-18T17:49:00.000+0000\",\n        \"status\":\"waiting_payment\",\n        \"total\":23999,\n        \"customer\": {\n            \"name\":\"Bruce Wayne\"\n        }\n    },\n    {\n        \"number\":\"2795EF65\",\n        \"date\":\"2019-07-18T18:12:00.000+0000\",\n        \"status\":\"confirmed\",\n        \"total\":7884,\n        \"customer\": {\n            \"name\":\"Peter Parker\"\n        }\n    }\n]",
+          "latency": 200,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "68cd1ae3-2a7c-484d-be3a-394249100af4",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/orders/8CV56R74",
+      "responses": [
+        {
+          "uuid": "f5174136-72b6-4422-9f26-6a5961a06592",
+          "body": "{\n    \"number\": \"8CV56R74\",\n    \"date\": \"2019-07-18T17:49:00.000+0000\",\n    \"status\": \"waiting_payment\",\n    \"total\": 23999,\n    \"discount\": 990,\n    \"deliveryFee\": 990,\n    \"customer\": {\n        \"name\":\"Bruce Wayne\"\n    },\n    \"items\": [\n        {\n            \"code\": \"C5BFAAF9\",\n            \"title\": \"Ração Canil 30KG\",\n            \"price\": 20000\n        },\n        {\n            \"code\": \"AFA21D81\",\n            \"title\": \"Coleira Cachorro Petz\",\n            \"price\": 3990\n        }\n    ]\n}",
+          "latency": 1300,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "5bc5df98-6f5c-44a3-ae86-8b641a737a48"
+    },
+    {
+      "type": "route",
+      "uuid": "243bccbf-fe3d-4349-9fc9-12467787e071"
+    },
+    {
+      "type": "route",
+      "uuid": "32e6bcef-762d-499b-bbe6-c9c10a3be635"
+    },
+    {
+      "type": "route",
+      "uuid": "68cd1ae3-2a7c-484d-be3a-394249100af4"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}
